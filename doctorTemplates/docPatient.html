@@ -1,0 +1,58 @@
+<div class="my-navbar">
+    <a href="" style="flex-grow:1;text-align:center;padding-top:3px;" ng-click="navTrigger()"><i class="fa fa-list" style="color:#424242;margin:0 auto;text-align:center;font-size:20px;margin-top:0.8rem;"></i></a>
+    <a href="" style="" class="logo">Medicos</a>
+</div>
+<div class="side-nav" id="sideNav">
+    <a href="" class="sideNavClose" ng-click="sideNavClose()"><i class="fa fa-times" style="color:#ccc;margin:0 auto;text-align:center;font-size:20px;margin-top:0.8rem;"></i></a>
+    <div class="name-details">
+        <img src="../profile.jpg" class="imageDoc" alt="">
+        <h5 class="nameDoc">Amal Shaju</h5>
+    </div>
+    <div style="margin:0 auto;height:1px;background:#424242;opacity:.2;width:90%;margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+    <div class="extra-options">
+        <a href="#/DPanel" class="links-items">My Profile</a>
+    </div>
+    <div class="extra-options">
+        <a href="#/docDB" class="links-items">Database</a>
+    </div>
+    <div class="extra-options">
+        <a href="#/docNew" class="links-items">New item</a>
+    </div>
+
+    <div class="extra-options">
+        <a href="#/docPatient" class="links-items active">My Patients</a>
+    </div>
+    <p class="brandName">Medicos</p>
+</div>
+
+<div class="main-content">
+    <a href="" style="position:absolute;right:40px;top:20px;text-align:right;padding-top:3px;" onclick="parent.location='index.html'"><i class="fa fa-power-off" style="color:#424242;margin:0 auto;text-align:center;font-size:20px;margin-top:0.8rem;"></i></a>
+
+    <div class="container" id="main">
+        <div>
+            <form style="text-align:center;">
+                <div class="form-group searchBar">
+                    <input type="text" class="form-control" ng-model="searchText" placeholder="Search here....!">
+                </div>
+            </form>
+            <div style="padding-top:3rem;">
+                <div class="subsciption" ng-repeat="list in patientDoc | filter:searchText">
+                    <div class="header-sub">
+                        <h5 style="flex-grow:1;font-size:15px;margin-top:8px;">Date: <strong style="font-weight:600">{{list.Date}}</strong></h5>
+                        <h5 style="flex-grow:1;font-size:15px;margin-top:8px;">Age: <strong style="font-weight:600">{{list.Age}}</strong></h5>
+                        <h5 style="flex-grow:1;font-size:15px;margin-top:8px;">Weight: <strong style="font-weight:600">{{list.Weight}}</strong></h5>
+
+                    </div>
+                    <div class="sub-main-details">
+                        <h5 style="flex-grow:1;font-size:15px;margin-top:8px;">Hospital: <strong style="font-weight:600">St. James Hospital, Chalakudy</strong></h5>
+                        <h5 style="flex-grow:1;font-size:15px;margin-top:8px;">Symptoms: <strong style="font-weight:600">{{list.Symptoms}}</strong></h5>
+                        <h5 style="flex-grow:1;font-size:15px;margin-top:8px;">Medicines: <strong style="font-weight:600">{{list.Medicines}}</strong></h5>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
